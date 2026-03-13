@@ -1,0 +1,43 @@
+# Build artifacts
+build/
+out/
+*/build/
+*/out/
+
+# Gradle
+.gradle/
+**/.gradle/
+gradle-build/
+
+# Java
+*.class
+*.log
+hs_err_pid*
+
+# IDEs
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Editor backups
+*~
+~$*
+*.swp
+*.swo
+
+# Node / frontend (in case of future additions)
+node_modules/
+dist/
+
+# Docker overrides (local only)
+docker-compose.override.yml
+

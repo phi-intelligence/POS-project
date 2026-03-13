@@ -1,0 +1,30 @@
+server:
+  port: 8089
+
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+  application:
+    name: notification-service
+
+  data:
+    redis:
+      host: ${REDIS_HOST:redis}
+      port: ${REDIS_PORT:6379}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true

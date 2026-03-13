@@ -1,0 +1,44 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: identity-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pos
+    username: pos
+    password: pos
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        default_schema: identity
+
+  flyway:
+    enabled: true
+    schemas: identity
+    locations: classpath:db/migration
+
+jwt:
+  secret: change-me-identity-jwt-secret
+  access-token-seconds: 900
+  refresh-token-seconds: 1209600
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
