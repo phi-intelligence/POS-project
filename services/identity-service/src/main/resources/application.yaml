@@ -21,7 +21,7 @@ spring:
   flyway:
     enabled: true
     schemas: identity
-    locations: classpath:db/migration
+    locations: classpath:db/migrations
 
 jwt:
   secret: change-me-identity-jwt-secret
@@ -42,3 +42,17 @@ management:
       enabled: true
     readinessstate:
       enabled: true
+
+bootstrap:
+  admin:
+    enabled: false
+    username: admin
+    # password: set via env/secret when enabled (e.g. BOOTSTRAP_ADMIN_PASSWORD)
+    # admin-unit-id: 1
+
+  breakglass:
+    enabled: false
+    # token: set via env/secret when enabled (e.g. BOOTSTRAP_BREAKGLASS_TOKEN)
+    # allowed-ips:
+    #   - "127.0.0.1"
+    trust-forwarded-for: true

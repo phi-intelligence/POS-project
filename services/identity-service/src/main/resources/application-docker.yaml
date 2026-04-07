@@ -25,10 +25,10 @@ spring:
   flyway:
     enabled: true
     schemas: identity
-    locations: classpath:db/migration
+    locations: classpath:db/migrations
 
 jwt:
-  secret: ${JWT_SECRET:change-me-identity-jwt-secret}
+  secret: ${JWT_SECRET:change-me-identity-jwt-secret-32-bytes-minimum-123456}
   access-token-seconds: 900
   refresh-token-seconds: 1209600
 
@@ -46,3 +46,9 @@ management:
       enabled: true
     readinessstate:
       enabled: true
+
+bootstrap:
+  breakglass:
+    enabled: true
+    token: ${BOOTSTRAP_BREAKGLASS_TOKEN:d3b7c4b1-9f0a-4f52-a9d2-8c0f4f1a7c93}
+    trust-forwarded-for: true

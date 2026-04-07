@@ -30,8 +30,10 @@ services:
       DB_NAME: pos
       DB_USERNAME: pos
       DB_PASSWORD: pos
-      JWT_SECRET: dev-identity-secret
+      JWT_SECRET: "this-is-a-very-long-random-jwt-secret-key-at-least-32-bytes-long-123456"
       SPRING_PROFILES_ACTIVE: docker
+      BOOTSTRAP_BREAKGLASS_ENABLED: "true"
+      BOOTSTRAP_BREAKGLASS_TOKEN: "d3b7c4b1-9f0a-4f52-a9d2-8c0f4f1a7c93"
     ports:
       - "8081:8081"
 
